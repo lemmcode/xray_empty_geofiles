@@ -36,6 +36,7 @@ jobs:
         run: |
           mkdir -p input
           echo "example.com" > input/Empty
+          echo "yaexample.com" > input/Empty2
 
       - name: Build EmptyGeosite.dat
         run: |
@@ -43,7 +44,7 @@ jobs:
           go run ./ \
             --datapath=./input \
             --outputdir=./release \
-            --exportlists=Empty \
+            --exportlists=Empty,Empty2 \
             --outputname=EmptyGeosite.dat
 
       - name: Generate EmptyGeosite hash
